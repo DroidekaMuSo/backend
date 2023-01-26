@@ -53,7 +53,7 @@ class ProducManager {
 
   //Traer las productos ya agregados al array a traves de un metodo
   getProducts = () => {
-    this.products;
+    return this.products;
   };
 
   //Conseguir el producto a traves de el parametro id usando un metodo
@@ -77,3 +77,16 @@ productManager.addProduct({
   code: "abc123",
   stock: 25,
 });
+
+console.log(productManager.getProducts());
+
+productManager.addProduct({
+  title: "Product",
+  description: "Test",
+  price: 200,
+  thumbnail: "No Image",
+  code: "abc123",
+  stock: 25,
+});
+
+console.log(productManager.getProducts());
