@@ -1,6 +1,6 @@
 //TODO: Define an addition function, numbers can't be 0, if one of them is 0 it's rejected with unnescesary operation
 
-const suma = (num1, num2) => {
+const addition = (num1, num2) => {
   return new Promise((resolve, reject) => {
     if (num1 === 0 || num2 === 0) {
       reject("Unnescesary operation");
@@ -62,6 +62,22 @@ const difficultCalculations = (input) =>
 
 const calculations = async () => {
   try {
-    const division = 0;
-  } catch (error) {}
+    const division1 = await div(10, 2);
+    console.log(division1);
+    difficultCalculations(division1);
+
+    const addition1 = await addition(10, 10);
+    console.log(addition1);
+
+    const substact1 = await substract(10, 9);
+    console.log(substact1);
+
+    const multiplication1 = await multiplication(5, 5);
+    await multiplication(-1, 10);
+    console.log(multi);
+  } catch (error) {
+    console.log(error);
+  }
 };
+
+calculations()

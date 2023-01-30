@@ -1,0 +1,1 @@
+Hi, I'm using promises to create a file with Node
