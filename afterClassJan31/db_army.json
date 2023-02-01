@@ -1,0 +1,13 @@
+{
+  "basesMilitares": [
+    {
+      "id": 1,
+      "nombreBase": "Base 1",
+      "CantidadSoldados": 200,
+      "CantidadTanques": 50,
+      "PoderioCombate": 45,
+      "Ubicacion": "Info secreta",
+      "GeneralMando": "Diego"
+    }
+  ]
+}

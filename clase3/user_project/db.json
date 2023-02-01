@@ -1,0 +1,19 @@
+{
+  "users": [
+    { "id": 1, "name": "Diego", "lastName": "Munoz", "userName": "dmunoz" },
+    {
+      "id": 2,
+      "name": "Diego",
+      "lastName": "Munoz",
+      "age": 24,
+      "course": "Backend"
+    },
+    {
+      "id": 3,
+      "name": "Diego",
+      "lastName": "Munoz",
+      "age": 24,
+      "course": "Backend"
+    }
+  ]
+}
