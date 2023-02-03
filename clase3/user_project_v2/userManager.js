@@ -12,19 +12,15 @@ class UserManager {
       //TODO: Add the user to the file
       const info = await this.getUsers();
       const lastId = info.users[info.users.length - 1].id + 1;
-      console.log(lastId);
 
       const salt = bcryptjs.genSalt();
-      let passwordEncrypted = bcryptjs.hash(password, salt, (err, hash) => {
-        if (error) {
-          console.log(error);
-        }
-        passwordEncrypted = hash;
-      });
+      let passwordEncrypted = atob(password);
+      console.log(passwordEncrypted)
+
       const pushUser = {
         name: name,
         lastName: lastName,
-        userName: userName,
+        userName,
         password: passwordEncrypted,
       };
 

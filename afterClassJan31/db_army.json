@@ -1,13 +1,22 @@
 {
-  "basesMilitares": [
+  "armyBases": [
     {
       "id": 1,
-      "nombreBase": "Base 1",
-      "CantidadSoldados": 200,
-      "CantidadTanques": 50,
-      "PoderioCombate": 45,
-      "Ubicacion": "Info secreta",
-      "GeneralMando": "Diego"
+      "baseName": "Base 1",
+      "soldiersAmount": 200,
+      "tanksAmount": 50,
+      "battleLevel": 45,
+      "address": "Secret Information",
+      "general": "Diego"
+    },
+    {
+      "id": 2,
+      "baseName": "Test base",
+      "soldiersAmount": 32,
+      "tanksAmount": 84,
+      "battleLevel": 10,
+      "address": "$2a$10$SW1lYKQMZ3uD3Hb0/lgFqO8JendZbZUFtzav07XT4ujlBYFVp4TIi",
+      "general": "Rabin"
     }
   ]
 }

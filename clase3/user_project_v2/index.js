@@ -1,6 +1,5 @@
 const path = require("path");
 const UserManager = require("./userManager");
-console.log("index userProject");
 
 const userProject = async () => {
   try {
