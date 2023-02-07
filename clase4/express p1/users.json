@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "rabin",
+      "lastName": "ferreira",
+      "age": 32,
+      "email": "profesor@gmail.com",
+      "gender": "m"
+    },
+    {
+      "id": 2,
+      "name": "Jose",
+      "lastName": "perez",
+      "age": 18,
+      "email": "jperez@gmail.com",
+      "gender": "m"
+    },
+    {
+      "id": 3,
+      "name": "Marta",
+      "lastName": "Cavalier",
+      "age": 22,
+      "email": "mcavalier@gmail.com",
+      "gender": "f"
+    }
+  ]
+}

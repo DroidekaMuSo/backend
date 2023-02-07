@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "baseName": "Test base",
+    "soldiersAmount": 0,
+    "tanksAmount": 84,
+    "battleLevel": 10,
+    "address": "$2a$10$SW1lYKQMZ3uD3Hb0/lgFqO8JendZbZUFtzav07XT4ujlBYFVp4TIi",
+    "general": "Rabin",
+    "new": "sadsa",
+    "title": "Updated product title",
+    "description": "Updated description"
+  },
+  {
+    "id": 2,
+    "baseName": "Test base",
+    "soldiersAmount": 0,
+    "tanksAmount": 84,
+    "battleLevel": 10,
+    "address": "$2a$10$SW1lYKQMZ3uD3Hb0/lgFqO8JendZbZUFtzav07XT4ujlBYFVp4TIi",
+    "general": "Rabin",
+    "new": "sadsa"
+  },
+  {
+    "id": 3,
+    "title": "producto prueba",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "abc123",
+    "stock": 25
+  }
+]
