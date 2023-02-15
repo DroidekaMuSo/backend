@@ -1,6 +1,5 @@
 const fs = require("fs");
 const ProductManager = require("./productManager");
-const { pid } = require("process");
 
 const productManager = new ProductManager("src/db/products.json");
 
