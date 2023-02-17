@@ -1,7 +1,12 @@
 const router = require("express").Router();
 const CartManager = require("../cartManager");
 
-const cartManager = new CartManager("../db/carts.json");
+const cartManager = new CartManager("./src//db/carts.json");
+
+router.get("/", async (req, res) => {
+  const carts = await cartManager.getCarts();
+  return await res.status(200).json({ carts });
+});
 
 router.post("/", async (req, res) => {
   await cartManager.addCart();
@@ -34,4 +39,4 @@ router.post("/:cid/product/:pid", async (req, res) => {
   });
 });
 
-module.exports =  CartManager;
+module.exports = router;

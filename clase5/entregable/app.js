@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Hi, please use",
+    message: "Hi",
   });
 });
 app.use("/api/products", routerProducts);

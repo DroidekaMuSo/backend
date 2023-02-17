@@ -10,7 +10,7 @@ class ProductManager {
   async getProducts() {
     try {
       //Setting the path of the data base
-      const productsDb = await fs.readFile(this.path, "utf-8");
+      const productsDb = await fs.promises.readFile(this.path, "utf-8");
       //Parsing the data to can read it
       return JSON.parse(productsDb);
     } catch (error) {
@@ -68,9 +68,9 @@ class ProductManager {
         (product) => product.id !== id
       );
       console.log(productsFiltered);
-      return 'Product removed succesfully'
+      return "Product removed succesfully";
     } catch (error) {
-        console.error(error)
+      console.error(error);
     }
   }
 
@@ -84,6 +84,5 @@ class ProductManager {
     } catch (error) {}
   }
 }
-
 
 module.exports = ProductManager;

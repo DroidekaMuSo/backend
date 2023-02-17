@@ -1,17 +1,13 @@
-const {Router} = require("express");
+const router = require("express").Router();
 const ProductManager = require("../productManager");
 
-const productManager = new ProductManager("../db/products.json");
-
-const router = Router();
+const productManager = new ProductManager("./src/db/products.json");
 
 router.get("/", async (req, res) => {
   const limit = Number(req.query.limit);
   const products = await productManager.getProducts();
 
-  if (limit) {
-    return res.status(200).json(products.slice(0, limit));
-  }
+  if (limit) return res.status(200).json(products.slice(0, limit));
 
   return res.status(200).json(products);
 });
