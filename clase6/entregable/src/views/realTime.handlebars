@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>Add product</h2>
+
+  <form id="form-product">
+    <div class="form__input">
+      <label for="title-prod">Name</label>
+      <input type="text" name="title-prod" />
+    </div>
+
+    <div class="form__input">
+      <label for="title-desc">Description</label>
+      <input type="text" name="title-desc" />
+    </div>
+
+    <div class="form__input">
+      <label for="title-category">Category</label>
+      <input type="text" name="title-category" />
+    </div>
+
+    <div class="form__input">
+      <label for="title-price">Price</label>
+      <input type="text" name="title-price" />
+    </div>
+
+    <div class="form__input">
+      <label for="title-stock">Stock</label>
+      <input type="text" name="title-stock" />
+    </div>
+
+    <button type="submit" id="submit">Add </button>
+
+  </form>
+
+  <div class="products__container" id="products-container"></div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
