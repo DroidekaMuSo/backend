@@ -1,11 +1,13 @@
 {{#if products}}
-    <h1>Products</h1>
-    {{#each products}}
-        <h2>{{this.title}}</h2>
-        <p><b>Description:</b> {{this.description}}</p>
-        <p><b>Price:</b> {{this.price}}</p>
-        <p><b>Stock:</b> {{this.stock}}</p>
-    {{/each}}
+  <h1 class="title">Products</h1>
+  {{#each products}}
+    <div class="product__container">
+      <h2>{{this.title}}</h2>
+      <p><b>Description:</b> {{this.description}}</p>
+      <p><b>Price:</b> {{this.price}}</p>
+      <p><b>Stock:</b> {{this.stock}}</p>
+    </div>
+  {{/each}}
 {{else}}
-    <h1>There's nothing in the cart</h1>
+  <h1>There's nothing in the cart</h1>
 {{/if}}

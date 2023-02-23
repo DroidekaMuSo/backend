@@ -1,11 +1,16 @@
 const router = require("express").Router();
 const CartManager = require("../cartManager");
 
-const cartManager = new CartManager("./db/carts.json");
+const cartManager = new CartManager("src/db/carts.json");
 
 router.post("/", async (req, res) => {
   await cartManager.addCart();
   res.status(200).json({ message: "Cart added" });
+});
+
+router.get("/", async (req, res) => {
+  const products = await cartManager.getCarts();
+  res.status(200).json({ products });
 });
 
 router.get("/:cid", async (req, res) => {

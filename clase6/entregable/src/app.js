@@ -36,6 +36,14 @@ app.use(express.static(__dirname + "/public"));
 //Renders
 app.use("/api/products", routesProducts);
 app.use("/api/carts", routesCart);
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hi",
+    products: "/api/products",
+    carts: "/api/carts",
+    realTimeProducts: "/realTimeProducst",
+  });
+});
 
 //Gets
 app.get("/realTimeProducst", async (req, res) => {
