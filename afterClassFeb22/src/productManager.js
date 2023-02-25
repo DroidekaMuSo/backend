@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require("fs/promises");
 
 class ProductManager {
   constructor(path) {
@@ -6,60 +6,58 @@ class ProductManager {
     this.products = [];
   }
 
-  getProducts = async () => {
+  async getProducts() {
     try {
-      const db = await fs.promises.readFile(this.path, "utf-8");
-      const parse = JSON.parse(db);
-      return parse;
+      const db = await fs.readFile(this.path);
+      console.log(db);
+      return JSON.parse(db);
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
-  getProductsById = async (id) => {
+  async getProductById(id) {
     try {
       const db = await this.getProducts();
-      const filteredDb = db.find((product) => product.id === Number(id));
+      const filteredDb = db.find((product) => product.id === id);
+      console.log(filteredDb);
       return filteredDb;
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
-  addProduct = async (product) => {
+  async addProduct(product) {
     try {
       const db = await this.getProducts();
       const id = await this.newId(db);
 
-      //Adding the product to the array
       db.push({ id, ...product });
-      //Updating our data base
       await fs.writeFile(this.path, JSON.stringify(db));
-      return "Product added";
+      console.log(db);
+      return db;
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
-  updateProduct = async (id, data) => {
+  async updateProduct(id, data) {
     try {
       const db = this.getProducts();
-      const filteredDb = this.getProductsById(id);
+      const filteredDb = this.getProductById(id);
 
-      //Finding product's id
       let index = db.findIndex((product) => product.id === id);
-      //Bringing the product
-      db[index] = { ...filteredDb, ...data };
-      //Overwritting our file
+      db[index] = { ...filteredDb, data };
+
       await fs.writeFile(this.path, JSON.stringify(db));
-      console.log("Product updated");
+      console.log("Product added");
       return filteredDb;
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
-  deleteProduct = async (id) => {
+  async deleteProduct(id) {
     try {
       const db = await this.getProducts();
       const filteredDb = db.filter((product) => product.id !== id);
@@ -68,17 +66,18 @@ class ProductManager {
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
-  //   *************Support functions*****************
-  newId = async (products) => {
+  //   Support Functions
+
+  async newId(db) {
     try {
-      if (products.length === 1) return 1;
-      return products[products.length - 1].id + 1;
+      if (db.length === 1) return 1;
+      return db[db.length - 1].id + 1;
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 }
 
 module.exports = ProductManager;
