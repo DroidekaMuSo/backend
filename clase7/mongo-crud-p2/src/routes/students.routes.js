@@ -58,7 +58,7 @@ router.post("/", async (req, res) => {
 });
 
 //TODO
-router.get("/:sid", async (req, res) => {});
+router.get("/:sid", async (req, res) => { });
 
 router.put("/:sid", async (req, res) => {
   try {
@@ -133,15 +133,20 @@ router.get("/filters", async (req, res) => {
       .limit(2);
 
 
-      //TODO: All students named Juan 
-      const JuansStudents = await studentsModel
-      .find({name: /^juan.*/i,})
+    //TODO: All students named Juan 
+    const JuansStudents = await studentsModel
+      .find({ name: /^juan.*/i, })
+
+
+    //TODO: All students named Juan and are 29 years old
+    const JuansStudents29 = await studentsModel
+      .find({ name: /^juan.*/i, age: { $eq: 29 } })
 
   } catch (error) {
     console.log(error);
   }
 });
 
-router.get("/highLevel", async (req, res) => {});
+router.get("/highLevel", async (req, res) => { });
 
 module.exports = router;
