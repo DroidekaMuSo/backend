@@ -1,7 +1,7 @@
-const { Schema } = require("mongoose");
-const colletionName = "Students";
+const mongoose = require("mongoose");
+const collectionName = "Students";
 
-const studentSchema = new Schema({
+const studentSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -17,7 +17,7 @@ const studentSchema = new Schema({
   dni: {
     type: String,
     required: true,
-    unique: true,
+    // unique: true,
   },
   course: {
     type: String,
@@ -28,3 +28,6 @@ const studentSchema = new Schema({
     required: true,
   },
 });
+
+const studentsModel = mongoose.model(collectionName, studentSchema);
+module.exports = studentsModel;
