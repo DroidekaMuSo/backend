@@ -65,7 +65,7 @@ class CartManager {
 
   newId = async (carts) => {
     try {
-      if (carts.legth === 1) return 1;
+      if (carts.length === 1) return 1;
       return carts[carts.length - 1].id + 1;
     } catch (error) {
       console.log(error);
