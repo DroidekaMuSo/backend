@@ -4,12 +4,19 @@ const mongoose = require("mongoose");
 const handlebars = require("express-handlebars");
 const path = require("path");
 const { Server } = require("socket.io");
+const displayRoutes = require("express-routemap");
+
+//Routes
+const productsRoute = require("./routes/products.routes");
+const cartsProducts = require("./routes/carts.routes");
+const messageRoute = require("./routes/chat.routes");
 
 const app = express();
 const PORT = 9090;
 
 const httpServer = app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`);
+  displayRoutes(app);
 });
 const socketServer = new Server(httpServer);
 
@@ -25,11 +32,9 @@ app.set("view engine", "handlebars");
 app.use(express.static(__dirname + "/public"));
 
 //Uses
-app.use("/api/products", routerProducts);
-app.use("/api/carts", routerCarts);
-app.use("/api/messages", routerMessages);
-
-console.log(first)
+app.use("/api/products", productsRoute);
+app.use("/api/carts", cartsProducts);
+app.use("/api/messages", messageRoute);
 
 //Initialize socket
 socketServer.on("connection", async (socket) => {
