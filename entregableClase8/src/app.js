@@ -5,10 +5,6 @@ const handlebars = require("express-handlebars");
 const path = require("path");
 const { Server } = require("socket.io");
 
-
-// require('dotenv').config();
-// const { DB_USER, DB_PASS } = process.env;
-
 const app = express();
 const PORT = 9090;
 
@@ -27,6 +23,13 @@ app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "handlebars");
 
 app.use(express.static(__dirname + "/public"));
+
+//Uses
+app.use("/api/products", routerProducts);
+app.use("/api/carts", routerCarts);
+app.use("/api/messages", routerMessages);
+
+console.log(first)
 
 //Initialize socket
 socketServer.on("connection", async (socket) => {

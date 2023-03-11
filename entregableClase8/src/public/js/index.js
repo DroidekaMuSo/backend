@@ -27,10 +27,10 @@ socket.on('products', products => {
 		productsContainer.innerHTML += `
 			<div>
             	<h2>${prod.title}</h2>
-            	<p><b>Descripción:</b> ${prod.description}</p>
-            	<p><b>Categoría:</b> ${prod.category}</p>
-            	<p><b>Precio: $</b>${prod.price}</p>
-            	<p><b>Código:</b> ${prod.code}</p>
+            	<p><b>Description:</b> ${prod.description}</p>
+            	<p><b>Category:</b> ${prod.category}</p>
+            	<p><b>Price: $</b>${prod.price}</p>
+            	<p><b>Code:</b> ${prod.code}</p>
             	<p><b>Stock:</b> ${prod.stock}</p>
             	<button id=${prod.id} class='btn-del'>Eliminar</button>
         	</div>
