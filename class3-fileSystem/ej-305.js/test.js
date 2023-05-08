@@ -1,0 +1,1 @@
+console.log('Reading a file .js')

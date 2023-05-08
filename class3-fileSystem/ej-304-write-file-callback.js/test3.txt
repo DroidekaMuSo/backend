@@ -1,0 +1,1 @@
+Writting in a file using a callback in NODEJS on 5/8/2023 using the format month/day/year
