@@ -1,0 +1,23 @@
+.form__div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.form__div h2{
+    text-align: center;
+    margin: 1em 0;
+}
+
+.add__prod{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 1em;
+}
+
+.add__prod div input{
+    width: 100%;
+}
