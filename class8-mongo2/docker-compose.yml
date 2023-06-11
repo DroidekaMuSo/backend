@@ -1,0 +1,20 @@
+version: '3.0'
+
+services:
+  mongo:
+    image: mongo
+    container_name: class8_mongo2
+    ports:
+      -27017:27017
+    volumes:
+      -mongo/data/configdb
+      -mongo/data/db
+    restart: always
+    
+networks:
+  nodejs-network:
+    name: nodejs-network
+    driver: bridge
+
+volumes:
+  mongo:
