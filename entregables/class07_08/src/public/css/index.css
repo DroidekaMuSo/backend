@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem;
+}
+
+.add-prod {
+    margin: 1rem 0;
+}
+
+.add-prod div {
+    margin: 0.5rem 0;
+}
+
+.add-prod div label input {
+    width: 100%;
+    margin: 0.2rem 0;
+    padding: 0.4rem;
+}
+
+.add-prod button {
+    padding: 0.4rem;
+    cursor: pointer;
+}
