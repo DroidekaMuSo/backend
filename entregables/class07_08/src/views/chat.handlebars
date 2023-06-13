@@ -1,0 +1,11 @@
+<div>
+    {{#if messages}}
+        {{#each messages}}
+            <div>
+                <p><strong>{{this.user}}</strong>: {{this.message}}</p>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No hay mensajes</p>
+    {{/if}}
+</div>

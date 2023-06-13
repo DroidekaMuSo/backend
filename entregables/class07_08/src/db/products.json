@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Product 1",
+    "description": "Description of Product 1",
+    "code": "ABC123",
+    "price": 19.99,
+    "status": true,
+    "stock": 10,
+    "category": "Category 1"
+  },
+  {
+    "id": 3,
+    "title": "Product 3",
+    "description": "Description of Product 3",
+    "code": "DEF789",
+    "price": 9.99,
+    "status": true,
+    "stock": 20,
+    "category": "Category 1"
+  },
+  {
+    "title": "Product 4",
+    "description": "Description of Product 4",
+    "code": "ABC123",
+    "price": 19.99,
+    "stock": 10,
+    "category": "Category 4",
+    "id": 4,
+    "thumbnails": [],
+    "status": true
+  },
+  {
+    "title": "Product 5",
+    "description": "Description of Product 5",
+    "code": "ABC123",
+    "price": 19.99,
+    "stock": 10,
+    "category": "Category 5",
+    "id": 5,
+    "thumbnails": [],
+    "status": true
+  }
+]

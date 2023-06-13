@@ -1,0 +1,13 @@
+{{#if product}}
+    {{#with product}}
+        <div>
+            <h2>{{title}}</h2>
+            <p><b>Descripción:</b> {{description}}</p>
+            <p><b>Precio: $</b>{{price}}</p>
+            <p><b>Código:</b> {{code}}</p>
+            <p><b>Stock:</b> {{stock}}</p>
+        </div>
+    {{/with}}
+{{else}}
+    <strong>{{message}}</strong>
+{{/if}}
