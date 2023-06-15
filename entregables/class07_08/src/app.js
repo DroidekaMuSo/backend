@@ -30,11 +30,15 @@ app.engine("handlebars", handlebars.engine());
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "handlebars");
 
+/*
 //*Routers using file system
 app.use("/fs/carts", cartsRouterFs);
 app.use("/fs/products", productsRouterFs);
 app.use("/fs/chat", chatRouterFs);
 app.use("/fs/views", viewsRouterFs);
+
+*/
+
 //*Routers using mongo
 app.use("/mongo/carts", cartRouterMongo);
 app.use("/mongo/products", productsRouterMongo);
