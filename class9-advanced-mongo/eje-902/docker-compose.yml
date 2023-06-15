@@ -1,0 +1,20 @@
+version: '3.0'
+
+services:
+  mongo_serv:
+    image: mongo
+    container_name: mongo_class9_eje2
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_lab:/data/configdb
+      - mongo_lab:/data/db
+    restart: always
+
+networks:
+  nodejs-networks:
+    name: nodejs-network
+    driver: bridge
+
+volumes:
+  mongo_lab:
