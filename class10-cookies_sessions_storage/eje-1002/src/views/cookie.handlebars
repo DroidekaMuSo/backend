@@ -1,0 +1,32 @@
+<div>
+    <h1>Using cookies</h1>
+
+    <div>
+        <h3>Creating a cookie</h3>
+
+        <form action="/api/cookies/create" method="post">
+
+            <div>
+                <label for="clientName"> Client Name</label>
+                <input type="text" name="name" id="name" placeholder="Insert your name">
+            </div>
+
+            <div>
+                <label for="email">Client email</label>
+                <input type="email" name="email" id="email" placeholder="Insert your email">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+    <div>
+        <h3>Cookie's information</h3>
+
+        <form action="/api/cookies" method="get">
+            <button type="submit">Get cookie</button>
+        </form>
+    </div>
+    
+</div>
