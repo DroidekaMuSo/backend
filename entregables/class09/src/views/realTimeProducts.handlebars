@@ -1,0 +1,42 @@
+<div class="form__div">
+  <h2>Add Product</h2>
+
+  <form id="add__product" class="add__prod">
+    <div>
+      <label for="title">Title
+        <input type="text" name="title" />
+      </label>
+    </div>
+    <div>
+      <label for="description">Description
+        <input type="text" name="description" />
+      </label>
+    </div>
+    <div>
+      <label for="category">Category
+        <input type="text" name="category" />
+      </label>
+    </div>
+    <div>
+      <label for="price">Price
+        <input type="text" name="price" />
+      </label>
+    </div>
+    <div>
+      <label for="code">Code
+        <input type="text" name="code" />
+      </label>
+    </div>
+    <div>
+      <label for="stock">Stock
+        <input type="text" name="stock" />
+      </label>
+    </div>
+    <button id="btn__form">Add</button>
+  </form>
+
+  <div id="products__container"></div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>

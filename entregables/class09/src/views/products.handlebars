@@ -1,0 +1,16 @@
+{{#if products}}
+    <h1>Productos</h1>
+    <div>
+        {{#each products}}
+            <div>
+                <h2>{{this.title}}</h2>
+                <p><b>Descripción:</b> {{this.description}}</p>
+                <p><b>Precio: $</b>{{this.price}}</p>
+                <p><b>Código:</b> {{this.code}}</p>
+                <p><b>Stock:</b> {{this.stock}}</p>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+    <strong>[!] Nos robaron todo!!</strong>
+{{/if}}
