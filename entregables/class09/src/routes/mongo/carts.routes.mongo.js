@@ -90,4 +90,19 @@ router.post("/:cid/product/:pid", async (req, res) => {
     );
   }
 });
+
+router.delete("/:cid/products/:pid/", async (req, res) => {
+  try {
+    const { cid, pid } = req.params;
+
+    const cart = await cartManager.deleteProductFromCart(cid, pid);
+
+    res.status(200).json({ message: "Product removed", cart });
+  } catch (error) {
+    console.log(
+      "🚀 ~ file: carts.routes.mongo.js:97 ~ router.delete ~ error:",
+      error
+    );
+  }
+});
 module.exports = router;

@@ -63,6 +63,21 @@ class CartModel {
       );
     }
   };
+
+  deleteProductFromCart = async (cid, pid) => {
+    try {
+      const cart = cartModel.findByIdAndUpdate(cid, {
+        $pull: { products: { _id: pid } },
+      });
+
+      return cart
+    } catch (error) {
+      console.log(
+        "🚀 ~ file: carts.manager.mongo.js:70 ~ CartModel ~ deleteProductFromCart ~ error:",
+        error
+      );
+    }
+  };
 }
 
 module.exports = CartModel;

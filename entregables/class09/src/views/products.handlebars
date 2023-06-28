@@ -1,16 +1,35 @@
-{{#if products}}
-    <h1>Productos</h1>
-    <div>
-        {{#each products}}
-            <div>
-                <h2>{{this.title}}</h2>
-                <p><b>Descripción:</b> {{this.description}}</p>
-                <p><b>Precio: $</b>{{this.price}}</p>
-                <p><b>Código:</b> {{this.code}}</p>
-                <p><b>Stock:</b> {{this.stock}}</p>
-            </div>
-        {{/each}}
+{{#if payload}}
+
+  <h1>Products</h1>
+
+  <div class="productsPage">
+    <div class="container">
+      {{#each payload}}
+
+        <div class="productContainer">
+
+          <h2>{{this.title}}</h2>
+
+          <p><b>Description:</b> {{this.description}} </p>
+          <p><b>Price:</b> {{this.price}} </p>
+          <p><b>Code:</b> {{this.code}} </p>
+          <p><b>Stock:</b> {{this.stock}}</p>
+
+        </div>
+
+      {{/each}}
     </div>
+  </div>
+
 {{else}}
-    <strong>[!] Nos robaron todo!!</strong>
+  <strong>[!] We've been stolen!!</strong>
 {{/if}}
+
+<div>
+  {{#if hasPrevPage}}
+    <a href="?page={{prevPage}}">Previous Page</a>
+  {{/if}}
+  {{#if hasNextPage}}
+    <a href="?page={{nextPage}}">Next Page</a>
+  {{/if}}
+</div>

@@ -1,14 +1,18 @@
 const productModel = require("../../models/products.model");
 
 class ProductManager {
-  getProducts = async () => {
+  getProducts = async (limit, page, sort) => {
     try {
-      const products = await productModel.find({});
+      const products = await productModel.paginate(
+        {},
+        { lean: true, limit, page }
+      );
 
-      return products;
+      return products
+
     } catch (error) {
       console.log(
-        "🚀 ~ file: product.manager.js:11 ~ ProductManager ~ getCarts=async ~ error:",
+        "🚀 ~ file: products.manager.mongo.js:13 ~ ProductManager ~ getProducts= ~ error:",
         error
       );
     }
@@ -23,7 +27,7 @@ class ProductManager {
       return product;
     } catch (error) {
       console.log(
-        "🚀 ~ file: product.manager.js:18 ~ ProductManager ~ getCartById=async ~ error:",
+        "🚀 ~ file: products.manager.mongo.js:25 ~ ProductManager ~ getProductById= ~ error:",
         error
       );
     }
@@ -36,14 +40,13 @@ class ProductManager {
       return product;
     } catch (error) {
       console.log(
-        "🚀 ~ file: product.manager.js:31 ~ ProductManager ~ createProduct=async ~ error:",
+        "🚀 ~ file: products.manager.mongo.js:35 ~ ProductManager ~ createProduct= ~ error:",
         error
       );
     }
   };
 
   updateProduct = async (pid, data) => {
-    console.log("🚀 ~ file: products.manager.mongo.js:47 ~ ProductManager ~ updateProduct= ~ data:", data)
     try {
       const product = await productModel.findByIdAndUpdate({ _id: pid }, data);
 
@@ -52,7 +55,7 @@ class ProductManager {
       return product;
     } catch (error) {
       console.log(
-        "🚀 ~ file: product.manager.js:41 ~ ProductManager ~ updateProduct=async ~ error:",
+        "🚀 ~ file: products.manager.mongo.js:47 ~ ProductManager ~ updateProduct= ~ error:",
         error
       );
     }
@@ -67,7 +70,7 @@ class ProductManager {
       return product;
     } catch (error) {
       console.log(
-        "🚀 ~ file: product.manager.js:48 ~ ProductManager ~ deleteProduct ~ error:",
+        "🚀 ~ file: products.manager.mongo.js:59 ~ ProductManager ~ deleteProduct ~ error:",
         error
       );
     }

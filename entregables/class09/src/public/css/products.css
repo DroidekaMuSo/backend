@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: space-evenly;
+  margin: auto;
+}
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  color: red;
+}

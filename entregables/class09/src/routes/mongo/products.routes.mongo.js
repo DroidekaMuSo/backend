@@ -4,12 +4,25 @@ const ProductManager = require("../../dao/controllers/mongo/products.manager.mon
 const productManager = new ProductManager();
 router.get("/", async (req, res) => {
   try {
-    const products = await productManager.getProducts();
+    const { limit = 10, page = 1, sort = 1 } = req.query;
+    const products = await productManager.getProducts(limit, page, sort);
 
-    return res.status(200).render("products", {products})
+    return res.status(200).render("products", {
+      status: "success",
+      payload: products.docs,
+      totalPages: products.totalDocs,
+      prevPage: products.prevPage,
+      nextPage: products.nextPage,
+      page: products.page,
+      hasPrevPage: products.hasPrevPage,
+      hasNextPage: products.hasNextPage,
+      prevLink: products.hasPrevPage ? "" : null,
+      nextLink: products.hasNextPage ? "" : null,
+      style: "products.css",
+    });
   } catch (error) {
     console.log(
-      "🚀 ~ file: products.routes.mongo.js:6 ~ router.get ~ error:",
+      "🚀 ~ file: products.routes.mongo.js:13 ~ router.get ~ error:",
       error
     );
   }
@@ -30,7 +43,7 @@ router.get("/:pid", async (req, res) => {
     return res.render("product", { product });
   } catch (error) {
     console.log(
-      "🚀 ~ file: products.routes.mongo.js:24 ~ router.get ~ error:",
+      "🚀 ~ file: products.routes.mongo.js:31 ~ router.get ~ error:",
       error
     );
   }
@@ -55,7 +68,7 @@ router.post("/", async (req, res) => {
     });
   } catch (error) {
     console.log(
-      "🚀 ~ file: products.routes.mongo.js:40 ~ router.post ~ error:",
+      "🚀 ~ file: products.routes.mongo.js:53 ~ router.post ~ error:",
       error
     );
   }
@@ -74,7 +87,7 @@ router.put("/:pid", async (req, res) => {
     return res.status(200).json({ message: "Product updated", product });
   } catch (error) {
     console.log(
-      "🚀 ~ file: products.routes.mongo.js:65 ~ router.put ~ error:",
+      "🚀 ~ file: products.routes.mongo.js:69 ~ router.put ~ error:",
       error
     );
   }
@@ -94,7 +107,7 @@ router.delete("/:pid", async (req, res) => {
     return res.status(200).json({ message: "Product deleted", product });
   } catch (error) {
     console.log(
-      "🚀 ~ file: products.routes.mongo.js:84 ~ router.delete ~ error:",
+      "🚀 ~ file: products.routes.mongo.js:86 ~ router.delete ~ error:",
       error
     );
   }
