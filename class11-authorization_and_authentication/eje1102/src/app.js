@@ -34,6 +34,21 @@ app.use(
   })
 );
 
+app.use(passport.initialize());
+
 app.engine("handlebars", handlebars.engine());
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "handlebars");
+
+mongoose
+  .connect(MONGO_URL)
+  .then((con) => {
+    console.log("Data base connected");
+    app.listen(PORT, () => {
+      displayRoutes(app);
+      console.log(`Running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
