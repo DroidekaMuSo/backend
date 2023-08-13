@@ -1,17 +1,16 @@
 version: '3.0'
 
 #Services to run
-
 services:
-  mongo_login: 
+  mongo_login: #name of BD service
     image: mongo
-    container_name: class11_exercise01
+    container_name: class11_project1
     ports:
-      - 27017:27017
+      -27017:27017
     volumes:
       - mongologin:/data/configdb
       - mongologin:/data/db
-    restart: always 
+    restart: always
 
 networks:
   nodejs-network:
@@ -19,5 +18,4 @@ networks:
     driver: bridge
 
 volumes:
-  mongologin: 
-  
+  mongologin:
