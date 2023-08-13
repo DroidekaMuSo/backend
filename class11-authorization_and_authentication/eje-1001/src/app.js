@@ -37,6 +37,9 @@ app.set("view engine", "handlebars");
 mongoose
   .connect(MONGO_URL)
   .then((con) => {
+    app.listen(PORT, () => {
+      displayRoutes(app);
+    });
     console.log("🚀 ~ file: app.js:38 ~ con:", con);
   })
   .catch((err) => {
