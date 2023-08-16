@@ -6,7 +6,7 @@ services:
     image: mongo
     container_name: class11_project1
     ports:
-      -27017:27017
+      - 27017:27017
     volumes:
       - mongologin:/data/configdb
       - mongologin:/data/db

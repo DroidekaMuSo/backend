@@ -1,0 +1,36 @@
+<div>
+  <h1>Log In</h1>
+
+  <div>
+    <form action="/api/v1/session/login" method="post">
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Insert your email"
+        />
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Insert your password"
+          required
+        />
+      </div>
+
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+
+      <div>
+        <a href="/api/v1/recover">Restore passsword</a>
+      </div>
+    </form>
+  </div>
+</div>

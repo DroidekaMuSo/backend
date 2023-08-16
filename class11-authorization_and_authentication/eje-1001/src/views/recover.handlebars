@@ -1,0 +1,33 @@
+<div>
+  <h1>Recover password</h1>
+
+  <div>
+    <form action="/api/v1/session/recover-psw" method="post">
+
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Insert your email"
+        />
+      </div>
+
+      <div>
+        <label for="password">New password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Insert the new password"
+        />
+      </div>
+
+      <div>
+        <button type="submit">Update password</button>
+      </div>
+
+    </form>
+  </div>
+</div>

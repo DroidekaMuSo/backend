@@ -9,7 +9,10 @@ const parth = require("path");
 const path = require("path");
 require("dotenv").config();
 
-const { PORT, DB_HOST, DB_PORT, DB_NAME } = process.env;
+const sessionRoute = require("./routes/session.routes");
+const viewsRoute = require("./routes/views.routes");
+
+const { PORT, DB_HOST, DB_PORT, DB_NAME, VERSION, API_PREFFIX } = process.env;
 const MONGO_URL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 
 const app = express();
@@ -34,11 +37,14 @@ app.engine("handlebars", handlebars.engine());
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "handlebars");
 
+app.use(`/${API_PREFFIX}/${VERSION}/`, viewsRoute);
+app.use(`/${API_PREFFIX}/${VERSION}/session`, sessionRoute);
 mongoose
   .connect(MONGO_URL)
   .then((con) => {
     app.listen(PORT, () => {
       displayRoutes(app);
+      console.log(`API running on port ${PORT}`);
     });
     console.log("🚀 ~ file: app.js:38 ~ con:", con);
   })
