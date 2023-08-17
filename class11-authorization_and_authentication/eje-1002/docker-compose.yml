@@ -1,0 +1,21 @@
+version: '3.8'
+
+#Services to run
+services:
+  mongo_login: #name of BD service
+    image: mongo
+    container_name: class11_project2
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongostrategy:/data/configdb
+      - mongostrategy:/data/db
+    restart: always
+
+networks:
+  nodejs-network:
+    name: nodejs-network
+    driver: bridge
+
+volumes:
+  mongostrategy:
