@@ -1,0 +1,51 @@
+<div>
+  <h1>Register</h1>
+
+  <div>
+    <form action="/api/session/register" method="post">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Type your name" />
+      </div>
+
+      <div>
+        <label for="lastName">Last name</label>
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          placeholder="Type your last name"
+        />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Type your email"
+        />
+      </div>
+
+      <div>
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" placeholder="Type your age" />
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Type your password"
+        />
+      </div>
+
+      <div>
+        <button type="submit">Create account</button>
+      </div>
+    </form>
+  </div>
+</div>

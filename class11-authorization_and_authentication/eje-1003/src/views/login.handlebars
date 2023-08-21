@@ -1,0 +1,37 @@
+<div>
+  <h1>Log in</h1>
+
+  <div>
+    <form action="/api/session/login" method="post">
+
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Insert your email"
+        />
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Insert your password"
+        />
+      </div>
+
+      <div>
+        <button type="submit">Log in</button>
+        <a href="/recover">Recover password</a>
+      </div>
+    </form>
+  </div>
+
+  <div>
+    <a href="/api/session/github"><button type="submit">Log In with GitHub</button></a>
+  </div>
+</div>
