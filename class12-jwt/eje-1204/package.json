@@ -20,6 +20,7 @@
     "express-handlebars": "^7.1.2",
     "express-routemap": "^1.6.0",
     "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.5",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
