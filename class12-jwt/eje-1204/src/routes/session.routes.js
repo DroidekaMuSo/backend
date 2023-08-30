@@ -43,8 +43,8 @@ router.post("/login", async (req, res) => {
       return res.json({ message: "User is not registered" });
     }
 
-    const isValidPassword = await isValidPassword(password, findUser.password);
-    if (!findUser) {
+    const validPassword = await isValidPassword(password, findUser.password);
+    if (!validPassword) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
@@ -85,13 +85,13 @@ router.get("/logout", async (req, res) => {
 
 router.get("/current", handlePolicies(["PUBLIC"]), async (req, res) => {
   try {
-    async (req, res) => {
-      console.log(`Validating request`, req.user);
+    console.log(`Validating request`, req.user);
 
-      return res.json({ message: "JWT in headers" });
-    };
+    return res.json({
+      message: "JWT in headers",
+    });
   } catch (error) {
-    console.log("🚀 ~ file: session.routes.js:89 ~ router.get ~ error:", error);
+    console.log("🚀 ~ file: session.routes.js:90 ~ router.get ~ error:", error);
   }
 });
 
@@ -124,6 +124,5 @@ router.get(
     }
   }
 );
-
 
 module.exports = router;
