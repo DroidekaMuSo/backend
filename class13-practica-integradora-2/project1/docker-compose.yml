@@ -1,0 +1,21 @@
+version: "3.8"
+
+#Services to run
+services:
+  mongo_strategy: #name of BD service
+    image: mongo
+    container_name: class13_project1
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongoauthhandslab:/data/configdb
+      - mongoauthhandslab:/data/db
+    restart: always
+
+networks:
+  nodejs-network:
+    name: nodejs-network
+    driver: bridge
+
+volumes:
+  mongoauthhandslab:
